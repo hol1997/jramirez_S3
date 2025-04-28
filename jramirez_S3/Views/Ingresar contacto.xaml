@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jramirez_S3.Views.Ingresar_contacto"
+             Title="Ingresar_contacto">
+    <ContentPage.Resources>
+        <!-- Estilos implícitos -->
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightBlue" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20"   Spacing="15">
+            <Picker x:Name="identificacionPicker" Title="Tipo de Identificación">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>CI</x:String>
+                        <x:String>RUC</x:String>
+                        <x:String>Pasaporte</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="numeroEntry" Placeholder="Número de identificación" Keyboard="Numeric" />
+            <Entry x:Name="nombresEntry" Placeholder="Nombres" />
+            <Entry x:Name="apellidosEntry" Placeholder="Apellidos" />
+            <DatePicker x:Name="fechaDatePicker" />
+            <Entry x:Name="correoEntry" Placeholder="Correo" Keyboard="Email" />
+            <Entry x:Name="salarioEntry" Placeholder="Salario" Keyboard="Numeric" />
+
+            <Button Text="Guardar y Ver Contacto" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jramirez_S3.Views.Ver_Contacto"
+             Title="Ver_Contacto">
+    <ContentPage.Resources>
+        <!-- Estilos explícitos -->
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="DarkBlue" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGreen" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+    <VerticalStackLayout>
+            <Label Text="{Binding TipoIdentificacion}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding NumeroIdentificacion}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding Nombres}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding Apellidos}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding FechaNacimiento, StringFormat='Fecha de Nacimiento: {0:dd/MM/yyyy}'}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding Correo}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding Salario, StringFormat='Salario: ${0:F2}'}" Style="{StaticResource labelStyle}" />
+            <Label Text="{Binding AporteIESS, StringFormat='Aporte IESS: ${0:F2}'}" Style="{StaticResource labelStyle}" />
+            <Button Text="Exportar Archivo" Clicked="Button_Clicked" Style="{StaticResource buttonStyle}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
