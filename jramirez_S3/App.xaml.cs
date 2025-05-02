@@ -12,7 +12,7 @@ namespace jramirez_S3
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new Views.Ingresar_contacto());
+              return new Window(new NavigationPage(new Ingresar_contacto()));
         }
     }
 }
